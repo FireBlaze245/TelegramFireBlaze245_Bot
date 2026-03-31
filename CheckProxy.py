@@ -20,3 +20,4 @@ async def test_proxy(proxy_url):
 # Или: http://host:port (для открытого прокси)
 proxy_url = "http://38.145.208.234:8453"
 asyncio.run(test_proxy(proxy_url))
+# hsjdfhs
