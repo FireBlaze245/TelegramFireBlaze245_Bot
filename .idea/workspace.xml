@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747a75ec-77c3-47ba-9148-74de9ccd3959" name="Changes" comment="the first fully working version of running a bot with a proxy has been recorded">
+    <list default="true" id="747a75ec-77c3-47ba-9148-74de9ccd3959" name="Changes" comment="the second fully working version of running a bot with a proxy has been recorded">
+      <change afterPath="$PROJECT_DIR$/Forms/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/routers.py" afterDir="false" />
     </list>
@@ -137,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775041824737</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="the second fully working version of running a bot with a proxy has been recorded">
+      <option name="closed" value="true" />
+      <created>1775053830514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775053830514</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +165,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="the first fully working version of running a bot with a proxy has been recorded" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first fully working version of running a bot with a proxy has been recorded" />
+    <MESSAGE value="the second fully working version of running a bot with a proxy has been recorded" />
+    <option name="LAST_COMMIT_MESSAGE" value="the second fully working version of running a bot with a proxy has been recorded" />
   </component>
 </project>
