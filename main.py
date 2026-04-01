@@ -1,12 +1,14 @@
+# библиотеки
 import asyncio
 import logging
 import tracemalloc
 from os import getenv
-from aiogram import Bot, Dispatcher, Router
+from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
 from aiogram.client.session.aiohttp import AiohttpSession
-
+# мои файлы
 from CheckProxy import CheckProxy
+from handlers.routers import *
 
 load_dotenv()
 TOKEN = getenv('BOT_TOKEN')
@@ -15,12 +17,8 @@ if not TOKEN:
 print(TOKEN)
 
 dp = Dispatcher()
-router = Router()
 dp.include_router(router)
 
-@router.message()
-async def hello(message):
-    await message.answer("Hello!")
 
 async def main():
     # Асинхронно ищем рабочий прокси
