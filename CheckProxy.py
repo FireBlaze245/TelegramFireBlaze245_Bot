@@ -56,3 +56,4 @@ class CheckProxy:
         self.proxy_status = 400  # Условный код ошибки
         print("❌ Ни один прокси не доступен")
         return self
+#

@@ -27,7 +27,7 @@ async def about(message: Message):
 @router.message()
 async def hello(message):
     await message.answer("Hello!")
-
+#
 
 
 
