@@ -6,7 +6,8 @@ from aiogram import Bot, Dispatcher, Router
 from dotenv import load_dotenv
 from aiogram.client.session.aiohttp import AiohttpSession
 
-session = AiohttpSession(proxy="http://95.213.217.168:52004")
+from CheckProxy import CheckProxy
+
 load_dotenv()
 TOKEN = getenv('BOT_TOKEN')
 if not TOKEN:
@@ -22,8 +23,22 @@ async def hello(message):
     await message.answer("Hello!")
 
 async def main():
-    bot = Bot(token=TOKEN, session=session, request_timeout=30)
-    await dp.start_polling(bot)
+    # Асинхронно ищем рабочий прокси
+    proxy_checker = await CheckProxy().find_working_proxy()
+
+    if proxy_checker.proxy_status == 200:
+        session = AiohttpSession(proxy=proxy_checker.proxy_url)
+        bot = Bot(token=TOKEN, session=session, request_timeout=100)
+        print(f"Запуск бота с прокси: {proxy_checker.proxy_url}")
+    else:
+        # Запускаем без прокси, если ни один не работает
+        bot = Bot(token=TOKEN, request_timeout=10)
+        print("Запуск бота без прокси")
+
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
@@ -32,4 +47,3 @@ if __name__ == '__main__':
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Exit')
-# hello from pc ggggg
